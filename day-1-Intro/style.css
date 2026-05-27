@@ -1,0 +1,15 @@
+*{margin: 0;padding:0;}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-color: rgb(14, 14, 14);
+}
+#world{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
