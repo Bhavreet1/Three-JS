@@ -8,6 +8,15 @@ const renderer = new Three.WebGLRenderer({ canvas });
 renderer.setSize(window.innerWidth, window.innerHeight);
 const controls = new OrbitControls(camera, renderer.domElement);
 
+// Enable damping (inertia) for smoother controls
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+
+// Enable auto-rotation of the camera around the target
+controls.autoRotate = true;
+controls.autoRotateSpeed = 10.0;
+
+
 
 const geometry = new Three.BoxGeometry();
 const material = new Three.MeshBasicMaterial({ color: 0x00ff00 ,wireframe: true });
@@ -18,8 +27,7 @@ camera.position.z = 5;
 
 function animate() {
     requestAnimationFrame(animate);
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+   
     controls.update();
     renderer.render(scene, camera);
 }
